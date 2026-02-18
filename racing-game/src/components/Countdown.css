@@ -1,0 +1,62 @@
+/**
+ * Countdown Component Styles
+ * Large centered text with semi-transparent overlay
+ */
+
+.countdown-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.countdown-text {
+  font-family: 'Arial Black', 'Helvetica Neue', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.5);
+  animation: countdown-pop 0.3s ease-out;
+}
+
+.countdown-number {
+  font-size: 8rem;
+  color: #ffffff;
+}
+
+.countdown-go {
+  font-size: 6rem;
+  color: #2ecc71;
+  text-shadow: 0 0 40px rgba(46, 204, 113, 0.8), 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes countdown-pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .countdown-number {
+    font-size: 5rem;
+  }
+
+  .countdown-go {
+    font-size: 4rem;
+  }
+}

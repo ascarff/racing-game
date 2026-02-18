@@ -1,0 +1,335 @@
+/**
+ * Race Results Screen Styles
+ * Dark theme with racing-inspired accent colors
+ */
+
+.race-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 50%, #16213e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle racing stripes in background */
+.race-results::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 100px,
+    rgba(255, 255, 255, 0.02) 100px,
+    rgba(255, 255, 255, 0.02) 102px
+  );
+  pointer-events: none;
+}
+
+.results-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 48px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  width: 90%;
+}
+
+.results-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.results-title.winner {
+  color: #2ecc71;
+  text-shadow: 0 0 20px rgba(46, 204, 113, 0.5);
+}
+
+.results-title.loser {
+  color: #e74c3c;
+  text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+}
+
+.position-badge {
+  padding: 12px 32px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 8px;
+}
+
+.first-place {
+  background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+  color: #1a1a2e;
+  box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
+}
+
+.second-place {
+  background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+  color: #1a1a2e;
+  box-shadow: 0 4px 15px rgba(149, 165, 166, 0.4);
+}
+
+/* Times Comparison Section */
+.times-comparison {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  justify-content: center;
+}
+
+.times-column {
+  flex: 1;
+  max-width: 280px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.times-header {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.player-header {
+  color: #e74c3c;
+}
+
+.cpu-header {
+  color: #3498db;
+}
+
+.total-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.time-label {
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.time-value {
+  font-size: 1.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  color: #00d4ff;
+  letter-spacing: 2px;
+}
+
+/* Lap Breakdown */
+.lap-breakdown {
+  margin-top: 12px;
+}
+
+.lap-header {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.lap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lap-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.lap-item.best-lap {
+  background: rgba(46, 204, 113, 0.2);
+  border: 1px solid rgba(46, 204, 113, 0.4);
+}
+
+.lap-item.cpu-best {
+  background: rgba(52, 152, 219, 0.2);
+  border: 1px solid rgba(52, 152, 219, 0.4);
+}
+
+.lap-number {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.lap-time {
+  font-size: 0.875rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.best-lap-badge {
+  font-size: 0.625rem;
+  padding: 2px 6px;
+  background: #2ecc71;
+  color: #fff;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.best-lap-badge.cpu-badge {
+  background: #3498db;
+}
+
+/* Action Buttons */
+.results-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.results-button {
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.race-again-button {
+  color: #ffffff;
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+}
+
+.race-again-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
+  background: linear-gradient(135deg, #3dd87a 0%, #2eb86a 100%);
+}
+
+.race-again-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.5), 0 6px 20px rgba(46, 204, 113, 0.6);
+}
+
+.main-menu-button {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.main-menu-button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.main-menu-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.5);
+}
+
+.results-controls {
+  margin-top: 8px;
+}
+
+.results-controls p {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
+
+.results-controls kbd {
+  display: inline-block;
+  padding: 2px 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875rem;
+  color: #aaa;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .results-content {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .results-title {
+    font-size: 1.75rem;
+    letter-spacing: 2px;
+  }
+
+  .position-badge {
+    font-size: 1.25rem;
+    padding: 10px 24px;
+  }
+
+  .times-comparison {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .times-column {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .time-value {
+    font-size: 1.25rem;
+  }
+
+  .results-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .results-button {
+    width: 100%;
+    padding: 12px 24px;
+  }
+}
